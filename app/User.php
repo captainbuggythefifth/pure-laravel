@@ -11,8 +11,13 @@ class User extends Authenticatable
      *
      * @var array
      */
+    const GENDER_TYPE_MALE = 1; //MALE
+    const GENDER_TYPE_FEMALE = 2;
+    const GENDER_TYPE_IN_BETWEEN = 3;
+
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'age', 'birth_date', 'gender'
     ];
 
     /**

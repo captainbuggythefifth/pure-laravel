@@ -38,6 +38,67 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('age') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Age</label>
+
+                            <div class="col-md-6">
+                                <input type="number" class="form-control" name="age" value="{{ old('age') }}">
+
+                                @if ($errors->has('age'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('age') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('birth_date') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Birthday</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="date" name="birth_date" value="{{ old('birth_date') }}">
+
+                                @if ($errors->has('birth_date'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('birth_date') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group {{ $errors->has('gender') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Radios</label>
+
+                            <div class="col-md-6">
+                                <div class="radio radio-primary">
+                                    <label>
+                                        <input type="radio" name="gender" id="gender_male" value="{{ \App\User::GENDER_TYPE_MALE }}" checked="">
+                                        Male
+                                    </label>
+                                </div>
+                                <div class="radio radio-primary">
+                                    <label>
+                                        <input type="radio" name="gender" id="gender_female" value="{{ \App\User::GENDER_TYPE_FEMALE }}">
+                                        Female
+                                    </label>
+                                </div>
+
+                                <div class="radio radio-primary">
+                                    <label>
+                                        <input type="radio" name="gender" id="gender_in_between" value="{{ \App\User::GENDER_TYPE_IN_BETWEEN }}">
+                                        In Between
+                                    </label>
+                                </div>
+                                @if ($errors->has('gender'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('gender') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                        </div>
+
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Password</label>
 
